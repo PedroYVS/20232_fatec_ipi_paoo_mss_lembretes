@@ -30,6 +30,11 @@ app.post('/eventos', async (req, res) => {
     await axios.post('http://localhost:7000/eventos', evento)
   }
   catch(e){}
+  try{
+    //Porta dos logs: 8000
+    await axios.post('http://localhost:8000/eventos', evento)
+  }
+  catch(e){}
   res.status(200).end()
 })
 
